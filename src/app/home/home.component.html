@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<div class="row">
+    <div class="col-md-12" (click)="openURL('https://randomuser.me/')">
+        <h3 class="text-center" >
+            Application to demonistrate Random user API
+        </h3>
+    </div>
+</div>
+
+  
+<div class="row">
+    <div class="col-md-6 button-middle">
+
+        <button type="button" class="btn btn-lg btn-primary  btn-block" (click)="getRandomData()">
+        Generate Random User
+    </button>
+    </div>
+    <div class="col-md-6 data-padding">
+        <div class="row">
+            <div class=" col-md-4">
+            </div>
+            <div class="col-md-4 text-center-custom" *ngIf="userData?.picture?.large">
+                <img alt="Bootstrap Image Preview" class="img-circle" src="{{userData?.picture?.large}}">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    {{userData?.name?.title | capitalize}}.{{userData?.name?.first | capitalize}} {{userData?.name?.last | capitalize}}
+                </h3>
+                <table id="table">
+                    <tbody>
+                        <tr class="label-custom">
+                            <td>Gender</td>
+                            <td>{{userData?.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-custom">Location</td>
+                            <td>{{userData?.location?.city}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-custom">Email</td>
+                            <td>{{userData?.email}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-custom">cell</td>
+                            <td>{{userData?.cell}}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-custom">DOB</td>
+                            <td>{{userData?.dob}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

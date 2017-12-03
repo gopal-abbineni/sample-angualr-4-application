@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-md-12" (click)="openURL('https://randomuser.me/')">
+      <h3 class="text-center" >
+          Application to demonistrate Google News API
+      </h3>
+  </div>
+</div>
+<div class="card-group card-group-flex">
+  <div class="card" style="width:400px;" *ngFor="let newsData of articles">
+    <img class="card-img-top" src="{{newsData.urlToImage}}" alt="Card image cap" style="max-width:50%">
+    <div class="card-body">
+      <h4 class="card-title">{{newsData.title}}</h4>
+      <p class="card-text">{{newsData.description}}&nbsp;<span class="text-muted" (click)="openURL(newsData.url)">Read More...</span></p>
+    </div>
+  </div>
+</div>
